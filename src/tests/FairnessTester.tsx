@@ -62,7 +62,7 @@ export function FairnessTester() {
     (state) => state.resetDiceCounts
   );
   const setBonus = useDiceControlsStore((state) => state.setDiceBonus);
-  const setAdvantage = useDiceControlsStore((state) => state.setDiceAdvantage);
+  const setDedge = useDiceControlsStore((state) => state.setDiceDedge);
 
   const singleDiceSelected = useMemo(() => {
     const totalCount = Object.values(counts).reduce(
@@ -114,7 +114,7 @@ export function FairnessTester() {
   function handleCountsReset() {
     resetDiceCounts();
     setBonus(0);
-    setAdvantage(null);
+    setDedge(null);
   }
 
   // Subscribe to roll finish events and add them to the rolledValues state
@@ -383,7 +383,7 @@ function Alerts({
   rolled: boolean;
 }) {
   const bonus = useDiceControlsStore((state) => state.diceBonus);
-  const advantage = useDiceControlsStore((state) => state.diceAdvantage);
+  const dedge = useDiceControlsStore((state) => state.diceDedge);
 
   if (active || rolled) {
     return null;
@@ -394,7 +394,7 @@ function Alerts({
       {bonus > 0 && (
         <Alert severity="warning">Bonus not supported by fairness tester</Alert>
       )}
-      {advantage && (
+      {dedge && (
         <Alert severity="warning">
           Advantage not supported by fairness tester
         </Alert>
