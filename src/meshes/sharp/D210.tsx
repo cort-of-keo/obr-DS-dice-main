@@ -7,7 +7,7 @@ import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 
-import glb from "./d10.glb";
+import glb from "./d210.glb";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -16,7 +16,7 @@ type GLTFResult = GLTF & {
   materials: {};
 };
 
-export const D10 = React.forwardRef<
+export const D210 = React.forwardRef<
   THREE.Group,
   JSX.IntrinsicElements["group"]
 >(({ children, ...props }, ref) => {
