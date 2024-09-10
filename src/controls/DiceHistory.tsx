@@ -22,17 +22,21 @@ export function DiceHistory() {
 
   const hidden = useDiceControlsStore((state) => state.diceHidden);
   const setBonus = useDiceControlsStore((state) => state.setDiceBonus);
-  const setAdvantage = useDiceControlsStore((state) => state.setDiceAdvantage);
+  const setDedge = useDiceControlsStore((state) => state.setDiceDedge);
+  const setEdge = useDiceControlsStore((state) => state.setDiceEdge);
+  const setBane = useDiceControlsStore((state) => state.setDiceBane);
   const resetDiceCounts = useDiceControlsStore(
     (state) => state.resetDiceCounts
   );
 
   function handleRoll(roll: RecentRoll) {
-    const dice = getDiceToRoll(roll.counts, roll.advantage, roll.diceById);
+    const dice = getDiceToRoll(roll.counts, roll.dedge, roll.diceById);
     startRoll({ dice, bonus: roll.bonus, hidden });
     resetDiceCounts();
     setBonus(0);
-    setAdvantage(null);
+    setDedge(null);
+    setEdge(null);
+    setBane(null);
     handleClose();
   }
 
@@ -139,8 +143,8 @@ function RecentRollChip({
               {recentRoll.bonus}
             </span>
           )}
-          {recentRoll.advantage !== null && (
-            <span>{recentRoll.advantage === "ADVANTAGE" ? "Adv" : "Dis"}</span>
+          {recentRoll.dedge !== null && (
+            <span>{recentRoll.dedge === "D EDGE" ? "D Edge" : "D Bane"}</span>
           )}
         </Stack>
       }
