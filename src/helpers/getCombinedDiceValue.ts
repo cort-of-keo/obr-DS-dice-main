@@ -42,21 +42,36 @@ export function getCombinedDiceValue(
   dice: Dice,
   values: Record<string, number>
 ): number | null {
+  
+  /** remove d100 logic
   const d100Value = checkD100Combination(dice, values);
   if (d100Value !== null) {
     return d100Value;
   }
+*/
+
+/**
+let currentValues: number[] = [];
+  for (const dieOrDice of dice.dice) {
+    if (isDie(dieOrDice)) {
+      const value = values[dieOrDice.id];
+      currentValues.push(value);
+      console.log(value);
+    }
+  }
+
+*/
+
+// WHY????
 
   let currentValues: number[] = [];
   for (const dieOrDice of dice.dice) {
     if (isDie(dieOrDice)) {
       const value = values[dieOrDice.id];
       if (value !== undefined) {
-        if (value === 0 && dieOrDice.type === "D10") {
-          currentValues.push(10);
-        } else {
+        // removed 0 to 10 for a d10 by changing locator value in dice mesh locators
           currentValues.push(value);
-        }
+          console.log(value);
       }
     } else if (isDice(dieOrDice)) {
       const value = getCombinedDiceValue(dieOrDice, values);
@@ -66,19 +81,29 @@ export function getCombinedDiceValue(
     }
   }
 
+
+  console.log(values);
+console.log(currentValues);
+
   const bonus = dice.bonus || 0;
 
+/** remove advantage logic
   if (currentValues.length === 0 || dice.combination === "NONE") {
     if (dice.bonus === undefined) {
       return null;
     } else {
       return dice.bonus;
     }
-  } else if (dice.combination === "HIGHEST") {
+  } else if (dice.combination === "D EDGE") {
     return Math.max(...currentValues) + bonus;
-  } else if (dice.combination === "LOWEST") {
+  } else if (dice.combination === "D BANE") {
     return Math.min(...currentValues) + bonus;
   } else {
     return currentValues.reduce((a, b) => a + b) + bonus;
-  }
+  } **/
+ 
+    console.log(currentValues.reduce((a, b) => a + b) + bonus);
+
+  return currentValues.reduce((a, b) => a + b) + bonus;
+
 }
