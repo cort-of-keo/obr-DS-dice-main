@@ -1,3 +1,5 @@
+import { useMemo } from "react";
+
 import { Dice, isDice } from "../types/Dice";
 import { isDie } from "../types/Die";
 
@@ -81,7 +83,13 @@ let currentValues: number[] = [];
     }
   }
 
+  const d1 = dice.dice[0];
+  const d2 = dice.dice[1];
 
+  console.log(dice);
+console.log(d1.type);
+
+  console.log(dice);
   console.log(values);
 console.log(currentValues);
 
@@ -107,3 +115,4 @@ console.log(currentValues);
   return currentValues.reduce((a, b) => a + b) + bonus;
 
 }
+
