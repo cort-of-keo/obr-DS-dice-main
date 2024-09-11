@@ -193,18 +193,20 @@ export function getDiceToRoll(
       if (type === "D210") {
         if (dedge === null) {
           // Push a 2d10s when power roll "D210" selected
+          
           dice.push(
-             
+            
               { id: generateDiceId(), style, type: "D210" },
               { id: generateDiceId(), style, type: "D210" },
             
+          
           );
         } else {
           const combination = dedge === "D EDGE" ? "D EDGE" : "D BANE";
           dice.push(
-             
-              { id: generateDiceId(), style, type: "D210",combination, },
-              { id: generateDiceId(), style, type: "D210",combination, },
+           
+              { id: generateDiceId(), style, type: "D210", combination, },
+              { id: generateDiceId(), style, type: "D210", combination, },
             
             
           );

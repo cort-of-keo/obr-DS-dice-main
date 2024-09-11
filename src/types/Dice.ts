@@ -69,6 +69,7 @@ export interface Dice {
    */
   combination?: "D EDGE" | "D BANE" | "SUM" | "NONE";
   bonus?: number;
+  
 }
 
 export function isDice(value: any): value is Dice {

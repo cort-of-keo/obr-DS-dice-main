@@ -43,7 +43,7 @@ function checkD100Combination(
 export function getCombinedDiceValue(
   dice: Dice,
   values: Record<string, number>
-): number | null {
+): number {
   
   /** remove d100 logic
   const d100Value = checkD100Combination(dice, values);
@@ -74,25 +74,29 @@ let currentValues: number[] = [];
         // removed 0 to 10 for a d10 by changing locator value in dice mesh locators
           currentValues.push(value);
           console.log(value);
+          console.log(dieOrDice);
       }
     } else if (isDice(dieOrDice)) {
       const value = getCombinedDiceValue(dieOrDice, values);
       if (value !== null) {
         currentValues.push(value);
+        console.log(value);
       }
     }
   }
 
+
+  /**
   const d1 = dice.dice[0];
   const d2 = dice.dice[1];
 
   console.log(dice);
-console.log(d1.type);
-
-  console.log(dice);
-  console.log(values);
-console.log(currentValues);
-
+  console.log(dice.dice);
+  console.log(d1);
+  console.log(d1.dice[0].type);
+  console.log(dice.combination);
+  console.log(currentValues);
+**/
   const bonus = dice.bonus || 0;
 
 /** remove advantage logic

@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 
 import { getCombinedDiceValue } from "../helpers/getCombinedDiceValue";
+import { getTierResults } from "../helpers/getTierResults";
 
 import { DiceRoll } from "../types/DiceRoll";
 import { Die, isDie } from "../types/Die";
@@ -29,16 +30,18 @@ export function DiceResults({
     return getCombinedDiceValue(diceRoll, rollValues);
   }, [diceRoll, rollValues]);
 
- // const tiers = useMemo(() => {
- //   return getTierResults(diceRoll, rollValues);
- // }, [diceRoll, rollValues]);
 
-  const die = useMemo(() => {diceRoll.dice.filter(isDie).sort((a,b) => 0)}, [diceRoll,rollValues]);
+
+  const tiers = useMemo(() => {
+    return getTierResults(diceRoll, rollValues);
+  }, [diceRoll, rollValues]);
+
+ // const die = useMemo(() => {diceRoll.dice.filter(isDie).sort((a,b) => 0)}, [diceRoll,rollValues]);
 
  
 
 
-  console.log(die);
+ // console.log(die);
   console.log(diceRoll);
   console.log(rollValues);
  //console.log(tiers);
@@ -60,7 +63,9 @@ export function DiceResults({
           <Typography variant="h4" color="white">
           &nbsp;
           </Typography>
-         
+          <Typography variant="h4" color="white">
+            {tiers[1]}
+          </Typography> 
         </Button>
       </Tooltip>
       <Grow
@@ -78,70 +83,7 @@ export function DiceResults({
 }
 
 
-/// adjust for reduced array depth. use d2 and d1.type etc should work
 
-function getTierResults(
-  dice: Dice,
-  values: Record<string, number>,
-) {
-  const finalValue = useMemo(() => {
-    return getCombinedDiceValue(dice, values);
-  }, [dice, values]);
-
-  const d1 = dice.dice[0];
-  const d2 = dice.dice[1];
-
-  let tierResults: string[] = [];
-  let intialTier: string = '';
-  let finalTier: string = '';
-
-
-  console.log(d1);
-  console.log(d1.combination);
-  console.log(values);
-
-
-  if (d1.dice.length === 2 && d1.dice[0].type === "D210" && d1.dice[1].type === "D210") {
-    if (finalValue < 12) { 
-      intialTier = 'Tier 1';
-      finalTier = 'Tier 1';
-    }else if (finalValue < 17) {
-      intialTier = 'Tier 2';
-      finalTier = 'Tier 2';
-    }
-    else {
-      intialTier = 'Tier 3';
-      finalTier = 'Tier 3';}
-  }
-
-
-
-
-  if (d1.dice.length === 2 && d1.dice[0].type === "D210" && d1.dice[1].type === "D210") {
-    if (d1.combination === "D EDGE"){
-      if (finalValue < 12) { finalTier = 'Tier 2'}
-      else if (finalValue < 17) { finalTier = 'Tier 3'}
-      else {finalTier = 'Tier 3'} 
-    } else if (d1.combination === "D BANE") {
-      if (finalValue > 17) { finalTier = 'Tier 2'}
-      else if (finalValue > 12) { finalTier = 'Tier 2'}
-      else {finalTier = 'Tier 1'} 
-    } 
-  }
-
-
-  if (d1.dice.length === 2 && d1.dice[0].type === "D210" && d1.dice[1].type === "D210") {
-    if ((values[d1.dice[0].id] === 10 && values[d1.dice[1].id] === 10) || (values[d1.dice[0].id] === 9 && values[d1.dice[1].id] === 10) || (values[d1.dice[0].id] === 10 && values[d1.dice[1].id] === 9) ) { finalTier = 'Critical!'}
-    
-  }
-
-  tierResults = [intialTier, finalTier];
-
-
-  return tierResults
-
-
-}
 
 
 function combination(dice: Dice) {
