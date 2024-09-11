@@ -5,15 +5,20 @@ import { Die, isDie } from "../types/Die";
 
 import { getCombinedDiceValue } from "../helpers/getCombinedDiceValue";
 
-/// adjust for reduced array depth. use d2 and d1.type etc should work
+
 
 export function getTierResults(
   dice: Dice,
   values: Record<string, number>,
+  finalValue: number
 ) {
+  
+  /**
   const finalValue = useMemo(() => {
     return getCombinedDiceValue(dice, values);
   }, [dice, values]);
+*/
+
 
   const d1 = dice.dice[0];
   const d2 = dice.dice[1];

@@ -172,7 +172,7 @@ function getDiceByIdFromSet(diceSet: DiceSet) {
   return byId;
 }
 
-/** Generate new dice based off of a set of counts, advantage and die */
+/** Generate new dice based off of a set of counts and die.  */
 export function getDiceToRoll(
   counts: DiceCounts,
   dedge: Dedge,
@@ -202,7 +202,7 @@ export function getDiceToRoll(
           
           );
         } else {
-          const combination = dedge === "D EDGE" ? "D EDGE" : "D BANE";
+          
           dice.push(
            
               { id: generateDiceId(), style, type: "D210",  },

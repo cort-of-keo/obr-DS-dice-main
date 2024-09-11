@@ -6,6 +6,7 @@ import Stack from "@mui/material/Stack";
 import Grow from "@mui/material/Grow";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
+import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 
 import { getCombinedDiceValue } from "../helpers/getCombinedDiceValue";
 import { getTierResults } from "../helpers/getTierResults";
@@ -26,15 +27,18 @@ export function DiceResults({
   expanded: boolean;
   onExpand: (expand: boolean) => void;
 }) {
+ 
   const finalValue = useMemo(() => {
     return getCombinedDiceValue(diceRoll, rollValues);
   }, [diceRoll, rollValues]);
 
-
-
+ 
   const tiers = useMemo(() => {
-    return getTierResults(diceRoll, rollValues);
+    return getTierResults(diceRoll, rollValues, finalValue);
   }, [diceRoll, rollValues]);
+  
+
+
 
  // const die = useMemo(() => {diceRoll.dice.filter(isDie).sort((a,b) => 0)}, [diceRoll,rollValues]);
 
@@ -65,7 +69,7 @@ export function DiceResults({
           </Typography>
           <Typography variant="h4" color="white">
             {tiers[1]}
-          </Typography> 
+          </Typography>
         </Button>
       </Tooltip>
       <Grow
@@ -75,7 +79,7 @@ export function DiceResults({
         style={{ transformOrigin: "50% 0 0" }}
       >
         <Stack overflow="auto" sx={{ pointerEvents: "all" }}>
-          <DiceResultsExpanded diceRoll={diceRoll} rollValues={rollValues} />
+          <DiceResultsExpanded diceRoll={diceRoll} rollValues={rollValues} tiers={tiers} />
         </Stack>
       </Grow>
     </Stack>
@@ -118,9 +122,11 @@ function sortDice(
 function DiceResultsExpanded({
   diceRoll,
   rollValues,
+  tiers
 }: {
   diceRoll: DiceRoll;
   rollValues: Record<string, number>;
+  tiers: string[];
 }) {
   const die = useMemo(
     () =>
@@ -131,6 +137,8 @@ function DiceResultsExpanded({
  
   console.log(die);
   console.log(dice);
+
+  
 
 
 
@@ -145,7 +153,7 @@ function DiceResultsExpanded({
             </Typography>
             {i < die.length - 1 && (
               <Typography lineHeight="28px" color="white">
-                {combination(diceRoll)}
+                +
               </Typography>
             )}
           </Stack>
@@ -165,7 +173,7 @@ function DiceResultsExpanded({
         )}
       </Stack>
       {dice.map((d, i) => (
-        <DiceResultsExpanded key={i} diceRoll={d} rollValues={rollValues} />
+        <DiceResultsExpanded key={i} diceRoll={d} rollValues={rollValues} tiers={tiers} />
       ))}
       {diceRoll.bonus && (
         <Typography textAlign="center" lineHeight="28px" color="white">
@@ -173,6 +181,21 @@ function DiceResultsExpanded({
           {diceRoll.bonus}
         </Typography>
       )}
+      {diceRoll.dedge && (
+        <>
+        <Typography textAlign="center" lineHeight="28px" color="white">
+        {tiers[0]}
+      </Typography>
+      <Typography textAlign="center" lineHeight="28px" color="white">
+      {<DoubleArrowIcon />}
+      </Typography>
+      <Typography textAlign="center" lineHeight="28px" color="white">
+        {tiers[1]}
+      </Typography>
+      </>
+      )}
+      
+
     </Stack>
   );
 }
