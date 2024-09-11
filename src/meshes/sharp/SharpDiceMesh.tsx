@@ -1,5 +1,6 @@
 import React from "react";
 import { DiceType } from "../../types/DiceType";
+import * as THREE from "three";
 
 import { D10 } from "./D10";
 import { D100 } from "./D100";

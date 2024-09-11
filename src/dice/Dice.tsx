@@ -1,5 +1,6 @@
 import React from "react";
 import { Die } from "../types/Die";
+import * as THREE from "three";
 
 import { DiceMesh } from "../meshes/DiceMesh";
 import { DiceMaterial } from "../materials/DiceMaterial";
