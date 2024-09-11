@@ -205,8 +205,8 @@ export function getDiceToRoll(
           const combination = dedge === "D EDGE" ? "D EDGE" : "D BANE";
           dice.push(
            
-              { id: generateDiceId(), style, type: "D210", combination, },
-              { id: generateDiceId(), style, type: "D210", combination, },
+              { id: generateDiceId(), style, type: "D210",  },
+              { id: generateDiceId(), style, type: "D210",  },
             
             
           );

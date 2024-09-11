@@ -7,7 +7,10 @@ import { isDie } from "../types/Die";
  * Check if the dice is a classical D100 roll with a D100
  * for the 10s unit and a D10 for the single digit.
  * If it is return the combined result.
- */
+ 
+removed
+
+
 function checkD100Combination(
   dice: Dice,
   values: Record<string, number>
@@ -33,6 +36,8 @@ function checkD100Combination(
   }
   return null;
 }
+
+*/
 
 /**
  * Recursively get the final result for a roll of dice

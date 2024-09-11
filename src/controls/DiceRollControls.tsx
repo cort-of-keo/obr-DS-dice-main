@@ -123,7 +123,7 @@ function DicePickedControls() {
       const dice = getDiceToRoll(counts, dedge, diceById);
       const activeTimeSeconds = (performance.now() - rollPressTime) / 1000;
       const speedMultiplier = Math.max(1, Math.min(10, activeTimeSeconds * 2));
-      startRoll({ dice, bonus, hidden }, speedMultiplier);
+      startRoll({ dice, bonus, dedge, hidden }, speedMultiplier);
 
       const rolledDiceById: Record<string, Die> = {};
       for (const id of Object.keys(counts)) {

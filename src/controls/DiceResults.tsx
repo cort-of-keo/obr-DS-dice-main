@@ -87,13 +87,12 @@ export function DiceResults({
 
 
 function combination(dice: Dice) {
-  if (dice.combination === "D EDGE") {
+  if (dice.dedge === "D EDGE") {
     return ">";
-  } else if (dice.combination === "D BANE") {
+  } else if (dice.dedge === "D BANE") {
     return "<";
-  } else if (dice.combination === "NONE") {
-    return ",";
-  } else {
+  } 
+   else {
     return "+";
   }
 }
@@ -101,7 +100,7 @@ function combination(dice: Dice) {
 function sortDice(
   die: Die[],
   rollValues: Record<string, number>,
-  combination: "D EDGE" | "D BANE" | "SUM" | "NONE" | undefined
+  combination: "D EDGE" | "D BANE" | null | undefined
 ) {
   return die.sort((a, b) => {
     const aValue = rollValues[a.id];
@@ -125,7 +124,7 @@ function DiceResultsExpanded({
 }) {
   const die = useMemo(
     () =>
-      sortDice(diceRoll.dice.filter(isDie), rollValues, diceRoll.combination),
+      sortDice(diceRoll.dice.filter(isDie), rollValues, diceRoll.dedge),
     [diceRoll, rollValues]
   );
   const dice = useMemo(() => diceRoll.dice.filter(isDice), [diceRoll]);
@@ -158,7 +157,7 @@ function DiceResultsExpanded({
             </Typography>
             <Typography lineHeight="28px" color="white">
               {getCombinedDiceValue(
-                { dice: die, combination: diceRoll.combination },
+                { dice: die, dedge: diceRoll.dedge },
                 rollValues
               )}
             </Typography>

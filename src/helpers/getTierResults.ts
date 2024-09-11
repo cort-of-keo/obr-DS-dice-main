@@ -15,11 +15,10 @@ export function getTierResults(
     return getCombinedDiceValue(dice, values);
   }, [dice, values]);
 
-  const d1: Dice = dice.dice[0];
-  const d2: Dice = dice.dice[1];
+  const d1 = dice.dice[0];
+  const d2 = dice.dice[1];
 
-  const D1: Die = d1;
-  const D2: Die = d2;
+
 
   let tierResults: string[] = [];
   let intialTier: string = '';
@@ -27,12 +26,11 @@ export function getTierResults(
 
 
   console.log(d1);
-  console.log(D1);
-  console.log(isDie(d1));
+  console.log(dice);
   console.log(values);
 
 
-  if (dice.dice.length === 2 && D1.type === "D210" && D2.type === "D210") {
+  if (isDie(d1) && isDie(d2) && dice.dice.length === 2 && d1.type === "D210" && d2.type === "D210") {
     if (finalValue < 12) { 
       intialTier = 'Tier 1';
       finalTier = 'Tier 1';
@@ -48,21 +46,21 @@ export function getTierResults(
 
 
 
-  if (dice.dice.length === 2 && D1.type === "D210" && D2.type === "D210") {
-    if (d1.combination === "D EDGE"){
+  if (isDie(d1) && isDie(d2) && dice.dice.length === 2 && d1.type === "D210" && d2.type === "D210") {
+    if (dice.dedge === "D EDGE"){
       if (finalValue < 12) { finalTier = 'Tier 2'}
       else if (finalValue < 17) { finalTier = 'Tier 3'}
       else {finalTier = 'Tier 3'} 
-    } else if (d1.combination === "D BANE") {
+    } else if (dice.dedge === "D BANE") {
       if (finalValue > 17) { finalTier = 'Tier 2'}
-      else if (finalValue > 12) { finalTier = 'Tier 2'}
+      else if (finalValue > 12) { finalTier = 'Tier 1'}
       else {finalTier = 'Tier 1'} 
     } 
   }
 
 
-  if (dice.dice.length === 2 && D1.type === "D210" && D2.type === "D210") {
-    if ((values[D1.id] === 10 && values[D2.id] === 10) || (values[D1.id] === 9 && values[D2.id] === 10) || (values[D1.id] === 10 && values[D2.id] === 9) ) { finalTier = 'Critical!'}
+  if (isDie(d1) && isDie(d2) && dice.dice.length === 2 && d1.type === "D210" && d2.type === "D210") {
+    if ((values[d1.id] === 10 && values[d2.id] === 10) || (values[d1.id] === 9 && values[d2.id] === 10) || (values[d1.id] === 10 && values[d2.id] === 9) ) { finalTier = 'Critical!'}
     
   }
 

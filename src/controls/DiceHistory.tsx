@@ -31,7 +31,7 @@ export function DiceHistory() {
 
   function handleRoll(roll: RecentRoll) {
     const dice = getDiceToRoll(roll.counts, roll.dedge, roll.diceById);
-    startRoll({ dice, bonus: roll.bonus, hidden });
+    startRoll({ dice, bonus: roll.bonus, dedge: roll.dedge, hidden });
     resetDiceCounts();
     setBonus(0);
     setDedge(null);

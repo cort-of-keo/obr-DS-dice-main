@@ -67,7 +67,7 @@ export interface Dice {
   /**
    * How to combine the dice for this roll (defaults to `SUM` if undefined)
    */
-  combination?: "D EDGE" | "D BANE" | "SUM" | "NONE";
+  dedge?: "D EDGE" | "D BANE" | null;
   bonus?: number;
   
 }
