@@ -4,9 +4,13 @@ Beautiful 3D dice extension for d20 based systems
 
 ![Example](/docs/header.jpg)
 
+
 ## Installing
 
-The extension can be installed from the [store page](https://extensions.owlbear.rodeo/dice).
+Follow this
+[guide](https://docs.owlbear.rodeo/extensions/tutorial-hello-world/install-your-extension)
+and use this [manifest link](https://obr-ds-dice-main.onrender.com/manifest.json)
+to install then extension in Owlbear.
 
 ## How it Works
 
@@ -64,8 +68,4 @@ GNU GPLv3
 
 ## Contributing
 
-This project is provided as an example of how to use the Owlbear Rodeo SDK. As such it is unlikely that we will accept pull requests for new features.
 
-Instead we encourage you to fork this repository and build the dice roller of your dreams.
-
-Copyright (C) 2023 Owlbear Rodeo
