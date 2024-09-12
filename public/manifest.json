@@ -1,14 +1,14 @@
 {
-  "name": "Dice",
-  "version": "2.0.0",
+  "name": "DS Dice for OBR",
+  "version": "0.1.1",
   "manifest_version": 1,
-  "author": "Owlbear Rodeo",
-  "homepage_url": "https://extensions.owlbear.rodeo/dice",
-  "icon": "/logo.png",
-  "description": "Beautiful 3D dice extension for d20 based systems",
+  "author": "Cort-of-KEO",
+  "homepage_url": "https://github.com/cort-of-keo/obr-DS-dice-main",
+  "icon": "/DS Dice logo.png",
+  "description": "Unofficial Dice roller for Draw Steel",
   "action": {
-    "title": "Dice",
-    "icon": "/icon.svg",
+    "title": "DS Dice for OBR",
+    "icon": "/d10-svgrepo-com.svg",
     "popover": "/",
     "height": 700,
     "width": 375
