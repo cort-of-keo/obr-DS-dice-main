@@ -3,9 +3,9 @@
   "version": "0.1.1",
   "manifest_version": 1,
   "author": "Cort-of-KEO",
-  "homepage_url": "https://github.com/cort-of-keo/obr-DS-dice-main/tree/main",
+  "homepage_url": "https://github.com/cort-of-keo/obr-DS-dice-main",
   "icon": "/DS Dice logo.png",
-  "description": "Dice roller for Draw Steel",
+  "description": "Unofficial Dice roller for Draw Steel",
   "action": {
     "title": "DS Dice for OBR",
     "icon": "/d10-svgrepo-com.svg",
