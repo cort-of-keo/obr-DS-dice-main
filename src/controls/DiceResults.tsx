@@ -7,6 +7,7 @@ import Grow from "@mui/material/Grow";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 
 import { getCombinedDiceValue } from "../helpers/getCombinedDiceValue";
 import { getTierResults } from "../helpers/getTierResults";
@@ -184,12 +185,16 @@ function DiceResultsExpanded({
       {diceRoll.dedge && (
         <>
         <Typography textAlign="center" lineHeight="28px" color="white">
+        Initial Tier:
+        &nbsp;
         {tiers[0]}
       </Typography>
       <Typography textAlign="center" lineHeight="28px" color="white">
-      {<DoubleArrowIcon />}
+      {<KeyboardDoubleArrowDownIcon />}
       </Typography>
       <Typography textAlign="center" lineHeight="28px" color="white">
+        Final Tier:
+        &nbsp;
         {tiers[1]}
       </Typography>
       </>
