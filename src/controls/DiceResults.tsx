@@ -63,14 +63,9 @@ export function DiceResults({
           color="inherit"
         >
           <Typography variant="h4" color="white">
-            {finalValue}
+            {finalValue} <br /> {tiers[1]}
           </Typography>
-          <Typography variant="h4" color="white">
-          &nbsp;
-          </Typography>
-          <Typography variant="h4" color="white">
-            {tiers[1]}
-          </Typography>
+          
         </Button>
       </Tooltip>
       <Grow
