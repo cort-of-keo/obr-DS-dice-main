@@ -33,7 +33,6 @@ export function Sidebar() {
         <DiceHidden />
         <DiceExtras />
         <DiceHistory />
-        <FairnessTesterButton />
         <PluginGate>
           <Divider flexItem sx={{ mx: 1 }} />
           <DiceRollSync />
