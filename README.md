@@ -1,71 +1,53 @@
-# Owlbear Rodeo Dice
+# DS Dice for OBR
 
-Beautiful 3D dice extension for d20 based systems
+Unofficial modification of [Owlbear Rodeo Dice](https://extensions.owlbear.rodeo/dice) for Draw Steel.
 
 ![Example](/docs/header.jpg)
 
 ## Installing
 
-The extension can be installed from the [store page](https://extensions.owlbear.rodeo/dice).
+Follow this
+[guide](https://docs.owlbear.rodeo/extensions/tutorial-hello-world/install-your-extension)
+and use this [manifest link](https://obr-ds-dice-main.onrender.com/manifest.json)
+to install then extension in Owlbear.
 
 ## How it Works
 
-This project uses [React](https://reactjs.org/) for UI, [Three.js](https://threejs.org/) for rendering and [Rapier](https://rapier.rs/) for physics.
+Contains only the dice needed for Draw Steel: d3, d6 and d10. 
 
-The physics simulation is used to both generate the animation for the roll as well as the final roll values.
+Power roll button generates 2d10s to roll.
 
-> Wait is it really random if physics is used to determine the result? How do I know the dice rolls are fair?
+![Example](/docs/2d10.png)
 
-Short answer yes, the dice are fair. Long answer [here's a statistical analysis](https://blog.owlbear.rodeo/are-owlbear-rodeos-dice-fair/) of the rolling methodology.
+![Example](/docs/roll.png)
 
-In order to sync rolls over the network efficiently we rely on the fact the Rapier is a deterministic physics engine. This means that across two different computers we'll get the same result given the same initial parameters.
+Set characteristic score, double edge/bane, edge/bane, and/or skilled. 
 
-So we only need to make sure that all the initial parameters are synced and then each client can run its own simulation and end up with the correct animation.
+![Example](/docs/Bonus.png)
 
-To try out the dice roller outside of Owlbear Rodeo you can head to <https://dice.owlbear.rodeo/>.
+When using the power roll button the tier result, including for the double edge/bane mechanic, will be displayed. Criticals! (natural 19 or 20) are detected and displayed. The expaned results show if the tier has changed from a double edge/bane:
 
-## Building
+Insert: Image of expanded results.
 
-This project uses [Yarn](https://yarnpkg.com/) as a package manager.
+For more info on how the base Owlbear Rodeo Dice extension works check out the orininal [repo](https://github.com/owlbear-rodeo/dice).
 
-To install all the dependencies run:
+To try out DS Dice for OBR outside of Owlbear Rodeo you can head to <https://obr-ds-dice-main.onrender.com/>.
 
-`yarn`
+## Maintainers
 
-To run in a development mode run:
-
-`yarn dev`
-
-To make a production build run:
-
-`yarn build`
-
-## Project Structure
-
-All source files can be found in the `src` folder.
-
-If you'd like to create a new dice set with the existing dice styles edit the `diceSets.ts` file in the `sets` folder.
-
-If you'd like to add a new dice style the 3D models for the dice are split across four folders: `materials`, `meshes`, `colliders` and `previews`.
-
-The `materials` folder contains the PBR materials for each dice style.
-
-The `meshes` folder contains the 3D geometry used for the dice.
-
-The `colliders` folder contains the simplified collider geometry for the dice.
-
-The `previews` folder contains 2D image previews for each dice.
-
-All the code specific for the Owlbear Rodeo extension is in the `plugin` folder.
+@cort-of-keo
 
 ## License
 
 GNU GPLv3
 
+This DS Dice for OBR is an independent product published under the DRAW STEEL Creator License and is not affiliated with MCDM Productions, LLC. DRAW STEEL © 2024 MCDM Productions, LLC.
+
 ## Contributing
 
-This project is provided as an example of how to use the Owlbear Rodeo SDK. As such it is unlikely that we will accept pull requests for new features.
+Base d10 png logo from: <https://www.clipartmax.com/middle/m2i8Z5N4i8d3d3A0_refskegg-thorarinnsson-dice-d10/>
 
-Instead we encourage you to fork this repository and build the dice roller of your dreams.
+Icon svg from: <https://www.svgrepo.com/svg/320084/d10>
 
-Copyright (C) 2023 Owlbear Rodeo
+Inspiration for custom dice set taken from this project: <https://github.com/Zonrotan/owlbear_myz_dice>
+
