@@ -1,15 +1,20 @@
+---
+title: DS Dice for OBR
+description: Unofficial modification of Owlbear Rodeo Dice for Draw Steel.
+author: Cort-of-KEO
+image: https://raw.githubusercontent.com/cort-of-keo/obr-DS-dice-main/main/docs/header.jpg
+icon: https://raw.githubusercontent.com/cort-of-keo/obr-DS-dice-main/main/public/logo.jpg
+tags:
+  - dice
+manifest: https://obr-ds-dice-main.onrender.com/manifest.json
+learn-more: https://github.com/cort-of-keo/obr-DS-dice-main
+---
+
 # DS Dice for OBR
 
 Unofficial modification of [Owlbear Rodeo Dice](https://extensions.owlbear.rodeo/dice) for Draw Steel.
 
 ![Example](/docs/header.jpg)
-
-## Installing
-
-Follow this
-[guide](https://docs.owlbear.rodeo/extensions/tutorial-hello-world/install-your-extension)
-and use this [manifest link](https://obr-ds-dice-main.onrender.com/manifest.json)
-to install then extension in Owlbear.
 
 ## How it Works
 
@@ -50,4 +55,3 @@ Base d10 png logo from: <https://www.clipartmax.com/middle/m2i8Z5N4i8d3d3A0_refs
 Icon svg from: <https://www.svgrepo.com/svg/320084/d10>
 
 Inspiration for custom dice sets taken from this project: <https://github.com/Zonrotan/owlbear_myz_dice>
-
