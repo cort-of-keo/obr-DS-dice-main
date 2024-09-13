@@ -25,7 +25,7 @@ Set characteristic score, double edge/bane, edge/bane, and/or skilled.
 
 ![Example](/docs/Bonus.png)
 
-When using the power roll button the tier result, including for the double edge/bane mechanic, will be displayed. Criticals! (natural 19 or 20) are detected and displayed. The expaned results show if the tier has changed from a double edge/bane:
+When using the power roll button the tier result, including for the double edge/bane mechanic, will be displayed. Criticals Hits! (natural 19 or 20) are detected and displayed. The expaned results show if the tier has changed from a double edge/bane:
 
 ![Example](/docs/results-expanded.png)
 
