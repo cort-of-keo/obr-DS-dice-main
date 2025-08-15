@@ -18,7 +18,7 @@ Unofficial modification of [Owlbear Rodeo Dice](https://extensions.owlbear.rodeo
 
 ## How it Works
 
-Contains only the dice needed for Draw Steel: d3, d6 and d10. 
+Contains only the dice needed for Draw Steel: d3, d6 and d10.
 
 Power roll button generates 2d10s to roll.
 
@@ -26,13 +26,15 @@ Power roll button generates 2d10s to roll.
 
 ![Example](/docs/roll.png)
 
-Set characteristic score, double edge/bane, edge/bane, and/or skilled. 
+Set characteristic score, double edge/bane, edge/bane, and/or skilled.
 
 ![Example](/docs/Bonus.png)
 
 When using the power roll button the tier result, including for the double edge/bane mechanic, will be displayed. Critical Hits! (natural 19 or 20) are detected and displayed. The expaned results show if the tier has changed from a double edge/bane:
 
 ![Example](/docs/results-expanded.png)
+
+For abilities the allow you to roll 3d10 and pick the lowest/highest you can pick up the relevant d10 and re-roll it.
 
 For more info on how the base Owlbear Rodeo Dice extension works check out the orininal [repo](https://github.com/owlbear-rodeo/dice).
 
@@ -46,7 +48,7 @@ To try out DS Dice for OBR outside of Owlbear Rodeo you can head to <https://obr
 
 GNU GPLv3
 
-This DS Dice for OBR is an independent product published under the DRAW STEEL Creator License and is not affiliated with MCDM Productions, LLC. DRAW STEEL © 2024 MCDM Productions, LLC.
+DS Dice for OBR is an independent product published under the DRAW STEEL Creator License and is not affiliated with MCDM Productions, LLC. DRAW STEEL © 2024 MCDM Productions, LLC.
 
 ## Contributing
 
