@@ -2,8 +2,8 @@
 title: DS Dice for OBR
 description: Unofficial modification of Owlbear Rodeo Dice for Draw Steel.
 author: Cort-of-KEO
-image: https://raw.githubusercontent.com/cort-of-keo/obr-DS-dice-main/main/docs/header.jpg
-icon: https://raw.githubusercontent.com/cort-of-keo/obr-DS-dice-main/main/public/logo.jpg
+image: https://raw.githubusercontent.com/cort-of-keo/obr-DS-dice-main/main/docs/results-expanded.png
+icon: https://raw.githubusercontent.com/cort-of-keo/obr-DS-dice-main/main/public/logo.png
 tags:
   - dice
 manifest: https://obr-ds-dice-main.onrender.com/manifest.json
